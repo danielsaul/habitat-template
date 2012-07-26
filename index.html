@@ -34,40 +34,74 @@
 
     <header>
         <div class="container">
-            <div class="two columns">
-                <h1 class="remove-bottom"><img src="images/header_logo.jpg" alt="habitat" title="habitat" /></h1>
+            <div class="sixteen columns">
+                <h1 class="no-margin"><img src="images/header_logo.jpg" alt="habitat" title="habitat"/></h1>
+                <span style="float: right;"><b>genpayload</b></span>
             </div>
         </div>
     </header>
 
-	<div class="container">
-		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Skeleton</h1>
-			<h5>Version 1.2</h5>
-			<hr />
-		</div>
-		<div class="one-third column">
-			<h3>About Skeleton?</h3>
-			<p>Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.</p>
-		</div>
-		<div class="one-third column">
-			<h3>Three Core Principles</h3>
-			<p>Skeleton is built on three core principles:</p>
-			<ul class="square">
-				<li><strong>A Responsive Grid Down To Mobile</strong>: Elegant scaling from a browser to tablets to mobile.</li>
-				<li><strong>Fast to Start</strong>: It's a tool for rapid development with best practices</li>
-				<li><strong>Style Agnostic</strong>: It provides the most basic, beautiful styles, but is meant to be overwritten.</li>
-			</ul>
-		</div>
-		<div class="one-third column">
-			<h3>Docs &amp; Support</h3>
-			<p>The easiest way to really get started with Skeleton is to check out the full docs and info at <a href="http://www.getskeleton.com">www.getskeleton.com.</a>. Skeleton is also open-source and has a <a href="https://github.com/dhgamache/skeleton">project on git</a>, so check that out if you want to report bugs or create a pull request. If you have any questions, thoughts, concerns or feedback, please don't hesitate to email me at <a href="mailto:hi@getskeleton.com">hi@getskeleton.com</a>.</p>
-		</div>
-
-	</div><!-- container -->
+    <div id="grey-section">
+        <div class="container">
+            <div class="two-thirds column">
+                <h3 class="remove-bottom">page title</h3>
+                A long subtitle, perhaps explaining something. I dunno. Maybe.
+            </div>
+            <div class="one-third column">
+                <img src="images/badge.png" alt="Badge" class="badge" />
+            </div>
+        </div>
+    </div>
 
 
-<!-- End Document
-================================================== -->
+    <div class="container">
+
+        <!-- ########################### -->
+        <!-- # Main Content Goes Here! # -->
+        <!-- ########################### -->
+        <form>
+                <div class="sixteen columns">
+                    <label class="two columns alpha" for="flight_name">flight name</label>
+                    <div class="six columns" style="text-align: left;">
+                        <input type="text" id="flight_name" style="float: left;"  cols="50"/>
+                        <img src="images/tick.png" alt="Complete" style="padding: 3px 0 0 10px; float: left;" />
+                    </div>
+                    <div class="six columns offset-by-two omega">
+                        <div class="input_extra"><div class="triangle"></div>e.g. Duck Christmas Launch.</div>
+                    </div>
+                </div>
+
+                <div class="sixteen columns">
+                    <label class="two columns alpha" for="flight_project">project name</label>
+                    <div class="six columns" style="text-align: left;">
+                        <input type="text" id="flight_project" style="float: left;" />
+                        <img src="images/exclamationmark.png" alt="Complete" style="padding: 3px 0 0 10px; float: left;" />
+                    </div>
+                    <div class="six columns offset-by-two omega">
+                        <div class="input_extra"><div class="triangle"></div>Optional, but highly recommended.</div>
+                    </div>
+                </div>
+
+                <div class="sixteen columns">
+                    <label class="two columns alpha" for="flight_group">team name</label>
+                    <div class="six columns" style="text-align: left;">
+                        <input type="text" id="flight_group" style="float: left;" />
+                        <img src="images/tick.png" alt="Complete" style="padding: 3px 0 0 10px; float: left;" />
+                    </div>
+                    <div class="six columns offset-by-two omega">
+                        <div class="input_extra"><div class="triangle"></div>Or your name, if you're working alone :-(. <br/>Optional, also recommended. </div>
+                    </div>
+                </div>
+
+                <hr/>
+                <div class="buttons sixteen columns">
+                <a id="flight_save" href="#" class="button">Save</a>
+                <a id="flight_abandon" href="#" class="button">Cancel</a>
+                </div>
+
+        </form>
+
+	</div>
+
 </body>
 </html>
