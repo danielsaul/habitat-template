@@ -1,7 +1,10 @@
 # Webpage template
-## for habitat - the Next Generation High Altitude Balloon Tracking system
+for habitat - the Next Generation High Altitude Balloon Tracking system
 
+## Authors
 Daniel Saul
+Daniel Richman
+Other Habitat People
 
 ## Colours
 Main Blue: #00a3d3
