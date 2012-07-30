@@ -11,24 +11,22 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
+    <meta charset="utf-8"/>
+    <title>habitat</title>
+    <meta name="description" content="the next generation high altitude balloon tracking system by UKHAS"/>
+    <meta name="author" content="Daniel Saul"/>
 
-	<meta charset="utf-8"/>
-	<title>habitat</title>
-	<meta name="description" content="the next generation high altitude balloon tracking system by UKHAS"/>
-	<meta name="author" content="Daniel Saul"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="stylesheets/base.css"/>
+    <link rel="stylesheet" href="stylesheets/skeleton.css"/>
+    <link rel="stylesheet" href="stylesheets/layout.css"/>
 
-	<link rel="stylesheet" href="stylesheets/base.css"/>
-	<link rel="stylesheet" href="stylesheets/skeleton.css"/>
-	<link rel="stylesheet" href="stylesheets/layout.css"/>
+    <!--[if lt IE 9]>
+       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<link rel="shortcut icon" href="images/favicon.ico" />
-
+    <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
 
@@ -36,7 +34,7 @@
         <div class="container">
             <div class="sixteen columns">
                 <h1 class="no-margin"><img src="images/header_logo.jpg" alt="habitat" title="habitat"/></h1>
-                <span style="float: right;"><b>genpayload</b></span>
+                <span id="app_name"><b>genpayload</b></span>
             </div>
         </div>
     </header>
@@ -44,64 +42,120 @@
     <div id="grey-section">
         <div class="container">
             <div class="two-thirds column">
-                <h3 class="remove-bottom">page title</h3>
-                A long subtitle, perhaps explaining something. I dunno. Maybe.
-            </div>
-            <div class="one-third column">
-                <img src="images/badge.png" alt="Badge" class="badge" />
+                <h3 class="remove-bottom" id="page_title">An example form</h3>
+                <p class="remove-bottom" id="page_subtitle">Taken from genpayload</p>
             </div>
         </div>
     </div>
 
-
-    <div class="container">
-
-        <!-- ########################### -->
-        <!-- # Main Content Goes Here! # -->
-        <!-- ########################### -->
-        <form>
-                <div class="sixteen columns">
-                    <label class="two columns alpha" for="flight_name">flight name</label>
-                    <div class="six columns" style="text-align: left;">
-                        <input type="text" id="flight_name" style="float: left;"  cols="50"/>
-                        <img src="images/tick.png" alt="Complete" style="padding: 3px 0 0 10px; float: left;" />
+    <div id="sections">
+        <section id="transmission_edit" class="container">
+            <div id="transmission_misc" class="sixteen columns">
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_description">Description</label>
+                    <div class="seven columns">
+                        <input type="text" id="transmission_description" class="long" />
                     </div>
-                    <div class="six columns offset-by-two omega">
-                        <div class="input_extra"><div class="triangle"></div>e.g. Duck Christmas Launch.</div>
+                    <div class="six columns offset-by-one omega">
+                        <div class="input_extra">Optional; e.g., Primary, alternative, nighttime mode.</div>
                     </div>
                 </div>
-
-                <div class="sixteen columns">
-                    <label class="two columns alpha" for="flight_project">project name</label>
-                    <div class="six columns" style="text-align: left;">
-                        <input type="text" id="flight_project" style="float: left;" />
-                        <img src="images/exclamationmark.png" alt="Complete" style="padding: 3px 0 0 10px; float: left;" />
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_frequency">Frequency (MHz)</label>
+                    <div class="seven columns validated">
+                        <input type="text" id="transmission_frequency" />
+                        <img src="images/exclamationmark.png" alt="Error" />
                     </div>
-                    <div class="six columns offset-by-two omega">
-                        <div class="input_extra"><div class="triangle"></div>Optional, but highly recommended.</div>
-                    </div>
-                </div>
-
-                <div class="sixteen columns">
-                    <label class="two columns alpha" for="flight_group">team name</label>
-                    <div class="six columns" style="text-align: left;">
-                        <input type="text" id="flight_group" style="float: left;" />
-                        <img src="images/tick.png" alt="Complete" style="padding: 3px 0 0 10px; float: left;" />
-                    </div>
-                    <div class="six columns offset-by-two omega">
-                        <div class="input_extra"><div class="triangle"></div>Or your name, if you're working alone :-(. <br/>Optional, also recommended. </div>
+                    <div class="six columns offset-by-one omega">
+                        <div class="input_extra">MHz</div>
                     </div>
                 </div>
-
-                <hr/>
-                <div class="buttons sixteen columns">
-                <a id="flight_save" href="#" class="button">Save</a>
-                <a id="flight_abandon" href="#" class="button">Cancel</a>
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_mode">Mode</label>
+                    <div class="seven columns">
+                        <select id="transmission_mode">
+                            <option>USB</option>
+                            <option>LSB</option>
+                            <option>AM</option>
+                            <option>FM</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_modulation">Modulation</label>
+                    <div class="seven columns">
+                        <select id="transmission_modulation">
+                            <option>RTTY</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-        </form>
+            <div id="transmission_rtty" class="sixteen columns">
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_shift">Shift (Hz)</label>
+                    <div class="seven columns validated">
+                        <input type="text" id="transmission_shift" />
+                        <img src="images/tick.png" alt="Complete" />
+                    </div>
+                    <div class="six columns offset-by-one omega">
+                        <div class="input_extra">Shifts supported by legacy fldigi are: 23, 85, 160,
+                        170, 182, 200, 240, 350, 425, 600 and 850.<br>
+                        Modern versions support any custom shift.</div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_encoding">Encoding</label>
+                    <div class="seven columns">
+                        <select id="transmission_encoding">
+                            <option>BAUDOT</option>
+                            <option>ASCII-7</option>
+                            <option>ASCII-8</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_baud">Baud</label>
+                    <div class="seven columns validated">
+                        <input type="text" id="transmission_baud" />
+                        <img src="images/tick.png" alt="Complete" />
+                    </div>
+                    <div class="six offset-by-one columns omega">
+                        <div class="input_extra">fldigi supports 45, 45.45, 50, 56, 75, 100, 110, 150,
+                        200 and 300 baud</div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_parity">Parity</label>
+                    <div class="seven columns">
+                        <select id="transmission_parity">
+                            <option>none</option>
+                            <option>odd</option>
+                            <option>even</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form row">
+                    <label class="two columns alpha" for="transmission_stop">Stop bits</label>
+                    <div class="seven columns">
+                        <select id="transmission_stop">
+                            <option>1</option>
+                            <option>1.5</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-	</div>
+            <hr />
+
+            <div class="sixteen columns buttons">
+                <button class="disabled" id="transmission_confirm">Confirm</button>
+                <button id="transmission_cancel">Cancel</button>
+            </div>
+        </section>
+
+    </div>
 
 </body>
 </html>

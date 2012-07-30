@@ -42,6 +42,10 @@ header h1{
     float: left;
 }
 
+header span#app_name {
+    float: right;
+}
+
 /* Grey Area */
 #grey-section{
     width: 100%;
@@ -67,20 +71,36 @@ header h1{
 }
 
 /* Forms */
-form label{
+.form.row label{
     padding-top: 3px;
     font-weight: normal;
 }
 
-form div{
-    margin-bottom: 15px !important;
+.form.row{
+    margin-bottom: 44px;
 }
 
-form input{
-    margin-bottom: 5px !important;
+.form.row input, .form.row select {
+    margin-bottom: 0 !important;
+    float: left;
 }
 
-.input_extra{
+.form.row select {
+    /* base.css makes this different to input for some reason. */
+    padding: 5px 4px;
+    width: 220px;
+}
+
+.validated input{
+    float: left;
+}
+
+.validated img{
+    padding: 3px 0 0 10px;
+    float: left;
+}
+
+.form.row .input_extra{
     background: #f8f8f8;
     color: #999999;
     padding: 5px;
@@ -90,15 +110,11 @@ form input{
     position: relative;
     min-height: 22px;
     width: auto;
-    
-}
-
-.input_extra .triangle{
-    display: none;
 }
 
 @media only screen and (min-width: 768px){
-.input_extra .triangle{
+.input_extra:before {
+    content: "\0020";
     width: 0;
     height: 0;
     border-top: 15px solid transparent;
@@ -109,6 +125,15 @@ form input{
     top: 1px;
     display: inline;
 }
+.form.row input.long {
+    width: 380px;
+}
+}
+
+.long_protection {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
 }
 
 /* #Page Styles
